@@ -3,6 +3,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
+In the project directory u can install the packages by running:
+### `npm install`
+
+If u have --openssl installed in your system then remove --openssl-legacy-provider from scripts in package.json file 
 
 In the project directory, you can run:
 
