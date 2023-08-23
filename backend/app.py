@@ -16,6 +16,7 @@ def get_data():
     try:
         data = {}
         data['q'] = request.args.get('search')
+        # data['q'] = 'abc'
         data['appid'] = '51930520c9cf0eb360ae6181e5a25c8c'
         data['units'] = 'metric'
         
@@ -26,18 +27,18 @@ def get_data():
         api_data = data.read().decode('utf-8')
         json_data = json.loads(api_data)
 
+        
         # clearing database documents
 
         # for delete in db.list_collection_names():
         #     collection = db[delete]
         #     collection.delete_many({})
         #     print('db cleared!')
-
-        count = {'dt': json_data['dt']}
-        document_count = todos.count_documents(count)
-        if document_count == 0:
-
-            #inserting data to database
+        
+        if json_data['name'] == 'None':
+            ...
+        else:
+                #inserting data to database
             date = datetime.now().strftime('%Y-%m-%d')
             todos.insert_one(json_data)
             todos.update_many({'datetime':{'$exists': False}},{'$set': {'datetime': date}}, upsert=False)
@@ -53,7 +54,7 @@ def get_data():
             ls.append(item)
         return jsonify(ls)
     except Exception as e:
-        return f'error generated is: {e}'
+        return {'error': 'No data found'}
 
 @app.route('/weather_by_date', methods = ['GET'])
 def weather_by_date():

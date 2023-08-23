@@ -51,7 +51,7 @@ function App() {
           setWeatherData(resp.data)
         }
         else{
-          alert('No data found!')
+          alert('No data found! plz verify city name!')
         }
       })
       .catch(error => {

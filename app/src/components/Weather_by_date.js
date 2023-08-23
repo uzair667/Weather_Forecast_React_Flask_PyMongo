@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import { WiDaySunny, WiCloudy, WiRain, WiSnow, WiDust } from 'react-icons/wi';
+import { WiDaySunny, WiCloudy, WiRain, WiSnow, WiDust, WiSmoke } from 'react-icons/wi';
 
 
 
@@ -20,7 +20,6 @@ export default function Weather_by_date(props) {
             if(response.data && response.data.length > 0){
 
                 setWeatherData(response.data);
-                console.log(response.data)
             }
             else{
                 alert('No data found!')
@@ -36,6 +35,8 @@ export default function Weather_by_date(props) {
         switch (weatherCondition) {
           case 'Clear':
             return <WiDaySunny />;
+          case 'Smoke':
+            return <WiSmoke />;
           case 'Haze':
             return <WiCloudy />;
           case 'Clouds':

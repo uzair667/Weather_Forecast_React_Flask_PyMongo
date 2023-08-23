@@ -5,7 +5,6 @@ import { WiDaySunny, WiCloudy, WiRain, WiSnow, WiDust } from 'react-icons/wi';
   
 export default function WeatherWidget(props) {
         let {weatherData, setWeatherData} = props
-        
         if(!weatherData){
             useEffect(() => {
               // Fetch weather data from the Flask backend
@@ -20,6 +19,7 @@ export default function WeatherWidget(props) {
         }
 
         const getWeatherIcon = (weatherData) => {
+
               const weatherCondition = weatherData[0].weather[0].main;  
               switch (weatherCondition) {
                 case 'Clear':
@@ -37,7 +37,7 @@ export default function WeatherWidget(props) {
                 default:
                   return null;
               }
-        }
+      }
 
     return (
         <>
@@ -67,6 +67,7 @@ export default function WeatherWidget(props) {
       </div>
       </>
     )
-  }
+  
+}
   
   
