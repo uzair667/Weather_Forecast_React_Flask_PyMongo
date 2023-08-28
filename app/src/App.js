@@ -13,6 +13,7 @@ import Home from './components/Home';
 import Search from './components/Search';
 import axios from 'axios';
 import Weather_by_date from './components/Weather_by_date';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -73,6 +74,7 @@ function App() {
             <Route path = '/bydate' element={<Weather_by_date mode={Mode} weatherData={weatherData} setWeatherData={setWeatherData} />}/>
           </Routes>
         </div>
+        <Footer mode = {Mode}/>
       </Router>
     </>
   );

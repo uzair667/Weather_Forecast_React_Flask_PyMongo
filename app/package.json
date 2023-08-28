@@ -1,7 +1,7 @@
 {
   "name": "app",
   "version": "0.1.0",
-  "proxy":"http://127.0.0.1:5020",
+  "proxy": "http://react-my-app-backend:5021",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -12,7 +12,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
     "react-router-dom": "^6.14.2",
-    "react-scripts": "^2.1.3",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -38,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-loader": "^9.1.3"
   }
 }

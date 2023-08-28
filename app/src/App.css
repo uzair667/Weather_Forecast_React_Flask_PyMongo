@@ -1,9 +1,16 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 /* AboutSection.css */
 
 .about-section {
     margin: 0 auto;
     padding: 30px;
     margin-top: 20px;
+    margin-bottom: 20px;
     max-width:fit-content;
     border-radius: 18px;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
@@ -80,3 +87,18 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
+  /* Footer.css */
+.footer {
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content p {
+  margin: 0;
+}

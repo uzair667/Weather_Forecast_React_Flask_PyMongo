@@ -1,0 +1,25 @@
+version: '3'
+services:
+  my-app-frontend:
+    build:
+      context: ./             # Use the current directory as the build context
+      dockerfile: Dockerfile  # Use the Dockerfile in the root for frontend
+    ports:
+      - "127.0.0.1:3000:3000" # Map host port to container port
+    depends_on:
+      - my-app-backend
+
+  my-app-backend:
+    build:
+      context: ./backend      # Use the backend directory as the build context
+    ports:
+      - "127.0.0.1:5020:5020" # Map host port to container port
+    environment:
+      MONGO_URI: "mongodb://mongo:27017/weather_db"  # Use the service name defined below
+    depends_on:
+      - mongo
+
+  mongo:
+    image: "mongo:latest"
+    ports:
+      - "27018:27018"
