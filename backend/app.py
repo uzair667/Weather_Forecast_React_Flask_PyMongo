@@ -4,8 +4,11 @@ from datetime import datetime
 import json
 import urllib
 from pymongo import MongoClient
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, resources = {r'/*':{'origins':'http://localhost:3001'}})
+
 
 client = MongoClient('mongodb://localhost:27017/')
 db = client['weather_db']
@@ -26,7 +29,6 @@ def get_data():
         data = urllib.request.urlopen(full_url)
         api_data = data.read().decode('utf-8')
         json_data = json.loads(api_data)
-
         
         # clearing database documents
 
